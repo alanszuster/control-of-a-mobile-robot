@@ -1,0 +1,146 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="RobotyMobilne" Height="425
+        
+        " Width="800" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <StackPanel Margin="0,0,0,-110" Orientation="Vertical">
+        <Grid RenderTransformOrigin="0.5,0.5" Height="426" Background="#FFAEA8AA" OpacityMask="White">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.167"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="138*"/>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="373*"/>
+                <ColumnDefinition Width="248*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Height="138" VerticalAlignment="Top" Width="380" RenderTransformOrigin="-3.566,0.186" Background="Gray" Margin="231,267,0,0" Grid.ColumnSpan="2" Grid.Column="2"/>
+
+            <StackPanel HorizontalAlignment="Left" Height="138" VerticalAlignment="Top" Width="385" RenderTransformOrigin="-3.566,0.186" Background="Gray" Margin="10,267,0,0" Grid.ColumnSpan="3"/>
+
+            <StackPanel HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="385" RenderTransformOrigin="-3.566,0.186" Background="Gray" Margin="10,135,0,0" Grid.ColumnSpan="3">
+                <Label Content=""/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="380" RenderTransformOrigin="-3.566,0.186" Background="Gray" Margin="232,135,0,0" Grid.ColumnSpan="2" Grid.Column="2">
+                <TextBlock TextWrapping="Wrap" Margin="0,0,-5,0"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="385" RenderTransformOrigin="-3.566,0.186" Grid.ColumnSpan="3" Background="Gray" Margin="10,10,0,0"/>
+            <Grid x:Name="manually" Margin="27,58,317.883,268.8" Grid.ColumnSpan="3" Visibility="Collapsed">
+                <Label Content="IP Adress" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="ipadress" HorizontalAlignment="Left" Height="23" Margin="64,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Ipadress_TextChanged" Text="127.0.0.1"/>
+                <Label Content="Port" HorizontalAlignment="Left" Margin="0,28,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="port" HorizontalAlignment="Left" Height="23" Margin="64,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="8000" AllowDrop="False"/>
+            </Grid>
+            <TextBox x:Name="outcome" HorizontalAlignment="Left" Height="19" Margin="22,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.Column="2"/>
+            <Button x:Name="send" Content="Send" HorizontalAlignment="Left" Margin="157,336,0,0" VerticalAlignment="Top" Width="45" Click="Send_Click" Grid.Column="2" RenderTransformOrigin="0.912,0.523" Height="19"/>
+            <Slider x:Name="motorL" HorizontalAlignment="Left" Margin="303,152,0,0" VerticalAlignment="Top" Height="26" Width="250" RenderTransformOrigin="0.614,-0.936" ValueChanged="Slider_ValueChanged" Maximum="127" Minimum="-128" Grid.ColumnSpan="2" Delay="100" Grid.Column="2"/>
+            <Slider x:Name="motorR" HorizontalAlignment="Left" Margin="303,190,0,0" VerticalAlignment="Top" Width="250" Maximum="127" Minimum="-128" Grid.ColumnSpan="2" LargeChange="3" Delay="100" ValueChanged="motorR_ValueChanged" Grid.Column="2"/>
+            <Ellipse x:Name="on" Fill="#FF37F732" HorizontalAlignment="Left" Height="30" Margin="130,68,0,0" Stroke="Black" VerticalAlignment="Top" Width="33" Grid.Column="2" />
+            <Ellipse x:Name="off" Fill="#FFF91A1A" HorizontalAlignment="Left" Height="30" Margin="130,68,0,0" Stroke="Black" VerticalAlignment="Top" Width="33" RenderTransformOrigin="2.804,0.572" Grid.Column="2"/>
+            <CheckBox x:Name="led1" Content="LED_1" HorizontalAlignment="Left" Margin="183,156,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="0.495,-0.343"/>
+            <CheckBox x:Name="led2" Content="LED_2" HorizontalAlignment="Left" Margin="183,193,0,0" VerticalAlignment="Top" Grid.Column="3" RenderTransformOrigin="0.471,-0.01"/>
+            <ProgressBar x:Name="sensor1" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="257,321,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.503,0.31" Maximum="2000" ValueChanged="sensor1_ValueChanged">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.707"/>
+                        <TranslateTransform X="-3.152" Y="2.534"/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <ProgressBar x:Name="sensor2" Grid.Column="2" HorizontalAlignment="Left" Height="15" Margin="327,321,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Maximum="2000" Grid.ColumnSpan="2">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.707"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <ProgressBar x:Name="sensor3" Grid.Column="3" HorizontalAlignment="Left" Height="15" Margin="27,320,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Maximum="2000">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.707"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <ProgressBar x:Name="sensor4" Grid.Column="3" HorizontalAlignment="Left" Height="15" Margin="96,319,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Maximum="2000">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.707"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <ProgressBar x:Name="sensor5" Grid.Column="3" HorizontalAlignment="Left" Height="15" Margin="156,320,-8,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Maximum="2000">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-89.707"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+            <Button x:Name="manual" Content="Manual" HorizontalAlignment="Left" Margin="27,180,0,0" VerticalAlignment="Top" Width="75" Click="Manual_Click" RenderTransformOrigin="0.004,0.642" Height="26"/>
+            <Button x:Name="auto" Content="Sliders" Margin="23,180,318,0" VerticalAlignment="Top" Click="Auto_Click" Grid.Column="1" Grid.ColumnSpan="2" Height="26"/>
+            <TextBlock x:Name="valueL" Grid.Column="2" HorizontalAlignment="Left" Margin="237,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.045,-0.008"/>
+            <TextBlock x:Name="valueR" Grid.Column="2" HorizontalAlignment="Left" Margin="237,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="keyboard" Content="Keyboard" Grid.Column="2" HorizontalAlignment="Left" Margin="108,180,0,0" VerticalAlignment="Top" Width="75" Click="Keyboard_Click" RenderTransformOrigin="0.496,2.461" Height="26"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="280,379,0,0" TextWrapping="Wrap" Text="Sensor 1" VerticalAlignment="Top" RenderTransformOrigin="1.146,1.382"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="353,379,0,0" TextWrapping="Wrap" Text="Sensor 2" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="56,379,0,0" TextWrapping="Wrap" Text="Sensor 3" VerticalAlignment="Top" RenderTransformOrigin="2.838,2.301"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="123,379,0,0" TextWrapping="Wrap" Text="Sensor 4" VerticalAlignment="Top" RenderTransformOrigin="0.874,4.496"/>
+            <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="185,379,0,0" TextWrapping="Wrap" Text="Sensor 5" VerticalAlignment="Top" RenderTransformOrigin="0.472,1.005"/>
+            <TextBlock x:Name="st1" Grid.Column="2" HorizontalAlignment="Left" Margin="276,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="3.388,0.635"/>
+            <TextBlock x:Name="st2" Grid.Column="2" HorizontalAlignment="Left" Margin="342,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.575,1.642"/>
+            <TextBlock x:Name="st3" Grid.Column="3" HorizontalAlignment="Right" Margin="0,320,191,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="3.555,0.66"/>
+            <TextBlock x:Name="st4" Grid.Column="3" HorizontalAlignment="Left" Margin="106,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.232"/>
+            <TextBlock x:Name="st5" Grid.Column="3" HorizontalAlignment="Left" Margin="168,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.138,0.559"/>
+            <TextBox x:Name="sendmessage" HorizontalAlignment="Left" Height="19" Margin="37,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Grid.ColumnSpan="2" IsEnabled="False" RenderTransformOrigin="0.444,3.376"/>
+            <TextBlock HorizontalAlignment="Left" Margin="57,313,0,0" TextWrapping="Wrap" Text="Send Message" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="33,311,0,0" TextWrapping="Wrap" Text="Manual Message" VerticalAlignment="Top" Grid.Column="2"/>
+            <Button x:Name="reset" Content="Reset" Grid.Column="3" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="75" Click="Reset_Click" RenderTransformOrigin="-0.666,-1.872"/>
+            <Ellipse x:Name="con" Fill="#FFF9EF1A" HorizontalAlignment="Left" Height="30" Margin="131,68,0,0" Stroke="Black" VerticalAlignment="Top" Width="33" Grid.Column="2" Visibility="Collapsed"/>
+            <TextBlock HorizontalAlignment="Left" Margin="280,152,0,0" TextWrapping="Wrap" Text="L" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="280,192,0,0" TextWrapping="Wrap" Text="R" VerticalAlignment="Top" Grid.Column="2" Width="8"/>
+            <Button x:Name="disconnectbtn" Content="Disconnect" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="112" Click="Button_Click_1" Grid.ColumnSpan="2" RenderTransformOrigin="1.029,0.64" Height="41" Grid.Column="1"/>
+            <Button x:Name="connectbtn" Content="Connect" HorizontalAlignment="Left" Margin="26,16,0,0" VerticalAlignment="Top" Width="112" Click="Button_Click" Height="40"/>
+            <Button x:Name="ipbtn" Content="IP" HorizontalAlignment="Left" Margin="90,16,0,0" VerticalAlignment="Top" Width="112" Click="Ipbtn_Click" Grid.Column="2" Height="41" RenderTransformOrigin="0.54,1.603"/>
+            <StackPanel HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="380" RenderTransformOrigin="-3.566,0.186" Background="Gray" Grid.Column="2" Margin="232,10,0,0" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="254,25,0,0" TextWrapping="Wrap" Text="Receive message:" VerticalAlignment="Top" Height="24" Width="144" Grid.ColumnSpan="2" FontSize="18" FontFamily="Arial Narrow" RenderTransformOrigin="0.489,1.178"/>
+            <TextBox x:Name="income" HorizontalAlignment="Left" Height="31" Margin="14,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Grid.Column="3" IsEnabled="False"/>
+            <TextBlock x:Name="battery" Grid.Column="3" HorizontalAlignment="Left" Margin="14,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="38" Width="76" RenderTransformOrigin="0.506,0.61" FontSize="18" FontFamily="Arial Narrow"/>
+            <TextBlock Grid.Column="2" Margin="318,77,4,0" TextWrapping="Wrap" Text="Battery:" VerticalAlignment="Top" FontSize="18" FontFamily="Arial Narrow" RenderTransformOrigin="0.715,0.255"/>
+            <StackPanel Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="197,405,0,-14" VerticalAlignment="Top" Width="100"/>
+            <DockPanel Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="161" LastChildFill="False" Margin="21,175,0,0" VerticalAlignment="Top" Width="374"/>
+            <Button x:Name="endbtn" Content="Message" Margin="10,389,0,21" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="41" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" FontSize="10"/>
+            <Button x:Name="endbtn_Copy" Content="Control Menu" Margin="10,233,0,177" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="56" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" FontSize="10" VerticalAlignment="Center"/>
+            <Button x:Name="endbtn_Copy2" Content="Connection&#xD;&#xA;" Margin="10,106,0,305" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="45" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" FontSize="10"/>
+            <Button x:Name="endbtn_Copy1" Content="Battery&#xD;&#xA;" Margin="232,104,0,305" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="34" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" Grid.Column="2" FontSize="10"/>
+            <Button x:Name="endbtn_Copy3" Content="Motors&#xD;&#xA;&#xD;&#xA;" Margin="231,235,0,177" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="35" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" Grid.Column="2" FontSize="10"/>
+            <Button x:Name="endbtn_Copy5" Content="Sensors&#xD;&#xA;" Margin="231,389,0,21" FontFamily="Arial Narrow" Background="White" HorizontalAlignment="Left" Width="35" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" Grid.Column="2" FontSize="10"/>
+            <Button x:Name="endbtn_Copy6" Content="X" Margin="223,0,0,405" FontFamily="MV Boli" Background="White" HorizontalAlignment="Left" Width="25" Click="Endbtn_Click" RenderTransformOrigin="0.293,20.744" Grid.Column="3"/>
+
+        </Grid>
+    </StackPanel>
+</Window>
