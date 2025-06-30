@@ -120,14 +120,6 @@ The application supports configurable connection parameters:
 - **Motor Limits**: Speed range -128 to +127
 - **Sensor Range**: 0-2000 units
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for:
-
-- Bug fixes
-- Feature enhancements
-- Documentation improvements
-- Code optimizations
 
 ## 📄 License
 
@@ -137,13 +129,3 @@ This project is open source and available under the [MIT License](LICENSE).
 
 `robotics` `wpf` `csharp` `tcp-ip` `mobile-robot` `control-system` `sensors` `motors` `desktop-application` `real-time` `automation` `embedded-systems`
 
-## 📸 Screenshots
-
-The application features a modern, intuitive interface with:
-
-- Connection status indicators
-- Motor control sliders
-- Real-time sensor displays
-- LED control panels
-- Battery monitoring
-- Message communication panels
